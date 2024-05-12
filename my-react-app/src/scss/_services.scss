@@ -1,0 +1,72 @@
+.services-page {
+  width: auto;
+  margin: 40px;
+  padding: 20px;
+  background-color: $color-background;
+  border: 3px solid $secondary-color;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    color: $color-h1;
+    margin-top: 0;
+    font-size: 30px
+  }
+  
+  h2 {
+    color: $color-h2;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 25px
+  }
+  
+  h3 {
+  
+    color: $color-h3;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 20px;
+  
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 3px solid #dddddd;
+    box-shadow: 0 0 10px lightblue;
+  }
+  
+  li {
+    padding: 10px;
+    border-bottom: 1px solid #cccccc;
+    font-size: 20px;
+  }
+  
+  img {
+    width: 200px;
+    height: 150px;
+    margin-right: 10px;
+  }
+  
+  .cart {
+    margin-top: 50px;
+  }
+  
+  .cart-button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .cart-button:hover {
+    background-color: #3e8e41;
+  }
+  
+  p {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

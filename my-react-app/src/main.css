@@ -182,7 +182,7 @@ header nav a:hover {
 }
 
 footer {
-  background-color: #3F51B5;
+  background-color: #cfdde3;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -205,4 +205,66 @@ footer .social-links a {
 }
 footer .social-links a:hover {
   color: #666666;
+}
+
+.services-page {
+  width: auto;
+  margin: 40px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 3px solid #cfdde3;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.services-page h1 {
+  color: black;
+  margin-top: 0;
+  font-size: 30px;
+}
+.services-page h2 {
+  color: rgb(0, 0, 137);
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+.services-page h3 {
+  color: rgb(0, 60, 0);
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.services-page ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 3px solid #dddddd;
+  box-shadow: 0 0 10px lightblue;
+}
+.services-page li {
+  padding: 10px;
+  border-bottom: 1px solid #cccccc;
+  font-size: 20px;
+}
+.services-page img {
+  width: 200px;
+  height: 150px;
+  margin-right: 10px;
+}
+.services-page .cart {
+  margin-top: 50px;
+}
+.services-page .cart-button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.services-page .cart-button:hover {
+  background-color: #3e8e41;
+}
+.services-page p {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
 }/*# sourceMappingURL=main.css.map */
