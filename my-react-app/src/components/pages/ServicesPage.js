@@ -70,6 +70,7 @@ function ServicesPage() {
           </li>
         ))}
       </ul>
+
       {selectedSpot && (
         <div class="selected-spot">
           <h3>Selected Spot: {selectedSpot.name}</h3>
@@ -77,7 +78,9 @@ function ServicesPage() {
           <p>Location: {selectedSpot.location}</p>
         </div>
       )}
+
       <h2>Fishing Gear</h2>
+
       <ul>
         {fishingGear.map((gear) => (
           <li key={gear.name}>
@@ -88,6 +91,7 @@ function ServicesPage() {
           </li>
         ))}
       </ul>
+
       <h2>Cart</h2>
       <ul class="cart">
         {cart.map((gear) => (
@@ -97,8 +101,10 @@ function ServicesPage() {
           </li>
         ))}
       </ul>
+
       <p> Cart value: (${calculateCartValue()})</p>
       <button class="cart-button" onClick={handleClearCart}>Clear Cart</button>
+      
     </div>
   );
 }

@@ -146,6 +146,8 @@ a, a:visited, a:hover, a:active, a:focus {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -267,4 +269,89 @@ footer .social-links a:hover {
   margin-top: 20px;
   font-size: 18px;
   font-weight: bold;
+}
+
+.home-page .przywitanie {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 30px;
+}
+.home-page .przywitanie img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.home-page h1 {
+  text-align: center;
+  padding: 20px;
+  color: rgb(0, 0, 137);
+}
+
+.news-section {
+  padding: 20px;
+}
+.news-section .news-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.news-section .news-list .news-item {
+  width: calc(33.333% - 20px);
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.news-section .news-list .news-item img {
+  width: auto;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.news-section .news-list .news-item .news-content {
+  padding: 20px;
+}
+.news-section .news-list .news-item .news-content h2 {
+  margin-bottom: 10px;
+  color: rgb(0, 60, 0);
+}
+.news-section .news-list .news-item .news-content p {
+  margin-bottom: 20px;
+}
+
+.comments-section {
+  padding: 20px;
+}
+.comments-section .comments-header {
+  margin-bottom: 20px;
+  color: #333;
+}
+.comments-section .comments-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.comments-section .comments-form label {
+  margin-bottom: 5px;
+}
+.comments-section .comments-form input,
+.comments-section .comments-form textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cfdde3;
+  border-radius: 5px;
+}
+.comments-section .comments-form button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.comments-section .comments-list .comment {
+  margin-bottom: 10px;
 }/*# sourceMappingURL=main.css.map */
