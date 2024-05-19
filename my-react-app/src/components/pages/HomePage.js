@@ -20,6 +20,7 @@ const HomePage = () => {
     },
     {
       title: 'Wędkarstwo Staje Się Coraz Popularniejszym Hobby Wśród Młodych Polaków',
+      content: 'Wędkarstwo Staje Się Coraz Popularniejszym Hobby Wśród Młodych Polaków',
       content: 'Wędkarstwo staje się coraz bardziej popularnym hobby wśród młodych Polaków, zauważają eksperci branżowi. Coraz więcej osób w wieku od 18 do 30 lat odkrywa radość spędzania czasu na łowieniu ryb, zarówno dla relaksu, jak i jako sposób na aktywność na świeżym powietrzu. Wzrost zainteresowania tym sportem przypisuje się również kampaniom promocyjnym zachęcającym do zdrowego stylu życia oraz rosnącej świadomości ekologicznej. Liczba młodych członków PZW wzrosła o 20% w porównaniu z poprzednim rokiem, co świadczy o rosnącej popularności wędkarstwa wśród tej grupy wiekowej.',
       photo: imgNews2,
     },
@@ -31,16 +32,27 @@ const HomePage = () => {
   ]);
 
   const [comments, setComments] = useState([]);
+  const [login, setLogin] = useState({ username: '', password: '' });
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
+    const name = loggedIn ? login.username : e.target.name.value;
     const opinion = e.target.opinion.value;
     const newComment = { name, opinion };
     setComments([...comments, newComment]);
     e.target.name.value = '';
     e.target.opinion.value = '';
- };
+  };
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    if (login.username === 'Wojtek' && login.password === 'Karp69') {
+      setLoggedIn(true);
+    } else {
+      setLoggedIn(false);
+    }
+  };
 
   return (
     <div className="home-page">
@@ -51,6 +63,32 @@ const HomePage = () => {
             <img src={item.logo} alt="Logo" />
           </div>
         ))}
+      </div>
+
+      <div className="login-section">
+        <h2>Login</h2>
+        <form onSubmit={handleLoginSubmit}>
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            value={login.username}
+            onChange={(e) => setLogin({ ...login, username: e.target.value })}
+            required
+          />
+          <br />
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            value={login.password}
+            onChange={(e) => setLogin({ ...login, password: e.target.value })}
+            required
+          />
+          <br />
+          <button type="submit">Login</button>
+        </form>
+        {loggedIn && <p>You are logged in!</p>}
       </div>
 
       <h1>Latest News</h1>
@@ -73,7 +111,7 @@ const HomePage = () => {
         <h2 className="comments-header">Comments:</h2>
         <form onSubmit={handleSubmit} className="comments-form">
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="name" value={loggedIn ? login.username : ''} readOnly={loggedIn} required={!loggedIn} />
           <br />
           <label htmlFor="opinion">Opinion:</label>
           <textarea id="opinion" name="opinion" required />
@@ -81,6 +119,7 @@ const HomePage = () => {
           <button type="submit">Submit</button>
         </form>
         <div className="comments-list">
+          <h1>comments:</h1>
           {comments.map((comment, index) => (
             <div key={index} className="comment">
               <p>{comment.name}: {comment.opinion}</p>

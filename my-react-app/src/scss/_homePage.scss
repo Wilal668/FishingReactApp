@@ -1,102 +1,153 @@
 .home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   .przywitanie {
-     background-color: $primary-color;
-     color: white;
-     text-align: center;
-     padding: 20px;
-     border-radius: $border-radius;
-     font-size: 30px;
-     img {
-       width: 100px;
-       border-radius: 50%;
-       margin-bottom: 10px;
-     }
-   }
- 
-   h1 {
-     text-align: center;
-     padding: 20px;
-     color: $color-h2;
-   }
- }
- 
- // News styles
- .news-section {
-   padding: 20px;
- 
-  .news-list {
-     display: flex;
-     flex-wrap: wrap;
- 
-    .news-item {
-       width: calc(33.333% - 20px);
-       margin: 10px;
-       border-radius: $border-radius;
-       box-shadow: $box-shadow;
- 
-       img {
-         width: auto;
-         height: 200px;
-         object-fit: cover;
-         border-top-left-radius: $border-radius;
-         border-top-right-radius: $border-radius;
-       }
- 
-      .news-content {
-         padding: 20px;
- 
-         h2 {
-           margin-bottom: 10px;
-           color: $color-h3;
-         }
- 
-         p {
-           margin-bottom: 20px;
-         }
-       }
-     }
-   }
- }
- 
- // Comments styles
- .comments-section {
-   padding: 20px;
- 
-  .comments-header {
-     margin-bottom: 20px;
-     color: $text-color;
-   }
- 
-  .comments-form {
-     display: flex;
-     flex-direction: column;
-     margin-bottom: 20px;
- 
-     label {
-       margin-bottom: 5px;
-     }
- 
-     input,
-     textarea {
-       padding: 10px;
-       margin-bottom: 10px;
-       border: 1px solid $secondary-color;
-       border-radius: $border-radius;
-     }
- 
-     button {
-       padding: 10px;
-       background-color: $primary-color;
-       color: white;
-       border: none;
-       border-radius: $border-radius;
-       cursor: pointer;
-     }
-   }
- 
-  .comments-list {
-    .comment {
-       margin-bottom: 10px;
-     }
-   }
- }
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    border-radius: $border-radius;
+    font-size: 30px;
+    margin-bottom: 20px;
+
+    img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+  }
+
+  .login-section {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    h2 {
+      color: $color-h1;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+
+      label {
+        margin-bottom: 5px;
+        color: $text-color;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid $secondary-color;
+        border-radius: $border-radius;
+      }
+
+      button {
+        padding: 10px;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+      }
+    }
+  }
+
+  h1 {
+    text-align: center;
+    padding: 20px;
+    color: $color-h2;
+  }
+
+  .news-section {
+    padding: 20px;
+    margin-bottom: 20px;
+
+    .news-list {
+      display: flex;
+      flex-wrap: wrap;
+
+      .news-item {
+        width: calc(33.333% - 20px);
+        margin: 10px;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+
+        img {
+          width: auto;
+          height: 200px;
+          object-fit: cover;
+          border-top-left-radius: $border-radius;
+          border-top-right-radius: $border-radius;
+        }
+
+        .news-content {
+          padding: 20px;
+
+          h2 {
+            margin-bottom: 10px;
+            color: $color-h3;
+          }
+
+          p {
+            margin-bottom: 20px;
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+
+  .comments-section {
+    padding: 20px;
+    margin-bottom: 20px;
+
+    .comments-header {
+      margin-bottom: 20px;
+      color: $text-color;
+    }
+
+    .comments-form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      label {
+        margin-bottom: 5px;
+        color: $text-color;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid $secondary-color;
+        border-radius: $border-radius;
+      }
+
+      button {
+        padding: 10px;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+      }
+    }
+
+    .comments-list {
+      width: 100%;
+
+      .comment {
+        margin-bottom: 10px;
+        color: $text-color;
+      }
+    }
+  }
+}
