@@ -1,7 +1,9 @@
+
 .home-page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 
   .przywitanie {
     background-color: $primary-color;
@@ -24,6 +26,12 @@
     text-align: center;
     padding: 20px;
     margin-bottom: 20px;
+    background-color: $color-background;
+    border: 2px solid $secondary-color;
+    border-radius: $border-radius;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: $box-shadow;
 
     h2 {
       color: $color-h1;
@@ -44,8 +52,10 @@
       textarea {
         padding: 10px;
         margin-bottom: 10px;
-        border: 1px solid $secondary-color;
+        border: 2px solid $secondary-color;
         border-radius: $border-radius;
+        width: 100%;
+        box-shadow: $box-shadow;
       }
 
       button {
@@ -55,6 +65,12 @@
         border: none;
         border-radius: $border-radius;
         cursor: pointer;
+        border: 3px solid $color-background;
+        transition: border-color 0.2s ease;
+
+        &:hover {
+          border-color: $primary-color;
+        }
       }
     }
   }
@@ -67,21 +83,28 @@
 
   .news-section {
     padding: 20px;
-    margin-bottom: 20px;
+    width: 100%;
 
     .news-list {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
 
       .news-item {
-        width: calc(33.333% - 20px);
+        width: 100%;
+        max-width: 400px;
         margin: 10px;
         border-radius: $border-radius;
         box-shadow: $box-shadow;
+        background-color: $color-background;
+        padding: 10px;
+        border: 3px solid $secondary-color;
+        box-shadow: $box-shadow;
 
         img {
-          width: auto;
-          height: 200px;
+          width: 100%;
+          height: auto;
+          max-height: 200px;
           object-fit: cover;
           border-top-left-radius: $border-radius;
           border-top-right-radius: $border-radius;
@@ -107,6 +130,12 @@
   .comments-section {
     padding: 20px;
     margin-bottom: 20px;
+    border: 3px solid $secondary-color;
+    border-radius: $border-radius;
+    background-color: $color-background;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: $box-shadow;
 
     .comments-header {
       margin-bottom: 20px;
@@ -127,17 +156,24 @@
       textarea {
         padding: 10px;
         margin-bottom: 10px;
-        border: 1px solid $secondary-color;
+        border: 2px solid $secondary-color;
         border-radius: $border-radius;
+        width: 100%;
+        box-shadow: $box-shadow;
       }
 
       button {
         padding: 10px;
         background-color: $primary-color;
         color: white;
-        border: none;
         border-radius: $border-radius;
+        border: 3px solid $color-background;
         cursor: pointer;
+        transition: border-color 0.2s ease;
+
+        &:hover {
+          border-color: $primary-color;
+        }
       }
     }
 
@@ -149,5 +185,18 @@
         color: $text-color;
       }
     }
+  }
+}
+
+// Media queries for responsiveness
+@media (min-width: 600px) {
+  .news-item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (min-width: 900px) {
+  .news-item {
+    width: calc(33.333% - 20px);
   }
 }

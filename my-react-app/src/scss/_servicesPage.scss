@@ -2,21 +2,24 @@
   width: auto;
   margin: 40px;
   padding: 20px;
-  background-color: $color-background;
+  background: $color-background;
   border: 3px solid $secondary-color;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
 
   h1 {
     color: $color-h1;
     margin-top: 0;
-    font-size: 30px
+    font-size: 30px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   }
 
   h2 {
     color: $color-h2;
     margin-top: 30px;
     margin-bottom: 20px;
-    font-size: 25px
+    font-size: 25px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   }
 
   h3 {
@@ -24,6 +27,7 @@
     margin-top: 30px;
     margin-bottom: 20px;
     font-size: 20px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   }
 
   ul {
@@ -31,19 +35,23 @@
     padding: 0;
     margin: 0;
     border: 3px solid #dddddd;
-    box-shadow: 0 0 10px lightblue;
+    border-radius: $border-radius;
+    box-shadow: 0 0 10px $secondary-color;
   }
 
   li {
     padding: 10px;
     border-bottom: 1px solid #cccccc;
     font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   img {
     width: 200px;
     height: 150px;
     margin-right: 10px;
+    border: 1px solid rgba($secondary-color, 0.2);
+    border-radius: $border-radius;
   }
 
  .cart {
@@ -51,21 +59,64 @@
   }
 
  .cart-button {
-    background-color: #4CAF50;
+    background-color: $primary-color;
     color: #ffffff;
-    border: none;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-  }
+    border-radius: $border-radius;
+    transition: background-color 0.3s ease;
 
- .cart-button:hover {
-    background-color: #3e8e41;
+    border-radius: $border-radius;
+    border: 3px solid $color-background;
+    border-radius: $border-radius;
+
+    cursor: pointer;
+    &:hover {
+      border-color: $primary-color;
+    }
   }
 
   p {
-    margin-top: 20px;
+    margin: 20px 0;
     font-size: 18px;
     font-weight: bold;
+  }
+
+  .selected-spot {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: $color-background;
+    border: 3px solid $secondary-color;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    h3 {
+      color: $color-h3;
+      font-size: 25px;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+      margin-top: 0;
+    }
+
+    img {
+      width: 200px;
+      height: 150px;
+      margin-bottom: 10px;
+      border: 1px solid rgba($secondary-color, 0.2);
+      border-radius: $border-radius;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 2px solid $secondary-color;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+    }
   }
 }

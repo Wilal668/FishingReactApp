@@ -3,3 +3,44 @@
     margin: 0;
     padding: 0;
   }
+
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  // Reguła ustawiająca podstawowy rozmiar czcionki na urządzeniach mobilnych
+  @media only screen and (max-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+  }
+  
+  // Reguła zapobiegająca powiększaniu elementów interaktywnych (np. przycisków) na urządzeniach dotykowych
+  @media only screen and (pointer: coarse) {
+    button, input[type="submit"], input[type="button"], input[type="reset"] {
+      touch-action: manipulation;
+    }
+  }
+  
+  // Reguła zapobiegająca automatycznemu zmienianiu rozmiaru niektórych elementów na urządzeniach z ekranem dotykowym
+  @media only screen and (hover: none) {
+    select, textarea, input {
+      font-size: 16px;
+    }
+  }
+  
+  // Reguła zapewniająca skalowanie obrazów i innych elementów według szerokości ekranu
+  img, embed, object, video {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  // Reguła zapobiegająca wyświetlaniu adresu e-mail jako linku
+  a[href^="mailto:"] {
+    text-decoration: none;
+  }
+  
+  // Reguła zapobiegająca wyświetlaniu numeru telefonu jako linku
+  a[href^="tel:"] {
+    text-decoration: none;
+  }

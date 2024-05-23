@@ -19,6 +19,9 @@ function Header() {
             <li>
                 <Link to="/contact">Contact</Link>
             </li>
+            <li>
+                <Link to="/fishing-calculator">Fishing Calculator</Link>
+            </li>
             </ul>
         </nav>
     </header>

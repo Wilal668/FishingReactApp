@@ -1,0 +1,109 @@
+
+.contact-page {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: $color-background;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  text-align: center;
+
+  h1 {
+    color: $color-h1;
+    margin-bottom: 1.5rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    div {
+      margin-bottom: 1rem;
+      text-align: left;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 2px solid $secondary-color;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+      }
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      border-radius: $border-radius;
+      border: 3px solid $color-background;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+
+      &:hover {
+        border-color: $primary-color;
+      }
+    }
+  }
+
+  .error {
+    color: red;
+    font-size: 0.875rem;
+  }
+
+  .submitted-data {
+    margin-top: 2rem;
+
+    h2 {
+      color: $color-h2;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin: 0.5rem 0;
+      color: $color-h3;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: $secondary-color;
+      color: white;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+
+      &:hover {
+        background-color: darken($secondary-color, 10%);
+      }
+    }
+  }
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  form div {
+    margin-bottom: 0.75rem;
+  }
+
+  form button {
+    padding: 0.5rem 1rem;
+  }
+
+  .submitted-data button {
+    padding: 0.5rem 1rem;
+  }
+}

@@ -6,6 +6,7 @@ import ServicesPage from './components/pages/ServicesPage';
 import ContactPage from './components/pages/ContactPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import FishingCalcuator from './components/pages/FishingCalculator';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/fishing-calculator" element={<FishingCalcuator />} />
         </Routes>
       </Router>
       <Footer/>

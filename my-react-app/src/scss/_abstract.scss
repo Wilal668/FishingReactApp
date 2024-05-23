@@ -1,11 +1,13 @@
-$primary-color: #4CAF50;
-$secondary-color: #cfdde3;
-$color-background: #f5f5f5;
+$primary-color: #b165f8;
+$secondary-color: #d4f9ff;
+$color-background: #eaf4f8;
 $text-color: #333;
 
 $color-h1: black;
-$color-h2: rgb(0, 0, 137);
+$color-h2: rgb(0, 0, 82);
 $color-h3: rgb(0, 60, 0);
 
 $border-radius: 5px;
 $box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+$gradient: linear-gradient(to bottom right, $color-background, lighten($color-background, 5%));

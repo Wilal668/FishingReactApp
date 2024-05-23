@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import OleśnikowaDolinaPhoto from './img/oleśnikowa-dolina.png';
 import EbroPhoto from './img/ebro.png';
@@ -27,20 +26,19 @@ function ServicesPage() {
     },
   ]);
 
-  const [selectedSpot, setSelectedSpot] = useState(null);
-
-  const handleSpotSelect = (spot) => {
-    setSelectedSpot(spot);
-  };
-
   const [fishingGear, setFishingGear] = useState([
     { name: 'Wędka', price: 50, photo: WedkaPhoto },
     { name: 'Kołowrotek', price: 30, photo: KolowrotekPhoto },
     { name: 'Przynęty', price: 20, photo: PrzynetyPhoto},
   ]);
 
-
+  const [selectedSpot, setSelectedSpot] = useState(null);
   const [cart, setCart] = useState([]);
+  const [accommodationPrice, setAccommodationPrice] = useState(0);
+
+  const handleSpotSelect = (spot) => {
+    setSelectedSpot(spot);
+  };
 
   const handleAddToCart = (gear) => {
     setCart([...cart, gear]);
@@ -56,44 +54,49 @@ function ServicesPage() {
     }, 0);
   };
 
+  const calculateTotalPrice = () => {
+    const gearTotal = calculateCartValue();
+    return gearTotal + accommodationPrice;
+  };
+
   return (
-    <div class="services-page">
+    <div className="services-page">
       <h1>Services:</h1>
       <h2>Fishing Spots</h2>
       <ul>
         {fishingSpots.map((spot) => (
           <li key={spot.name}>
             <img src={spot.photo} alt={spot.name} />
-            <a href="#" onClick={() => handleSpotSelect(spot)}>
+            <span onClick={() => handleSpotSelect(spot)}>
               {spot.name}
-            </a>
+            </span>
           </li>
         ))}
       </ul>
 
       {selectedSpot && (
-        <div class="selected-spot">
+        <div className="selected-spot">
           <h3>Selected Spot: {selectedSpot.name}</h3>
-          <img src={selectedSpot.photo} alt={selectedSpot.name} width="200px" />
+          <img src={selectedSpot.photo} alt={selectedSpot.name} />
           <p>Location: {selectedSpot.location}</p>
+          <input type="number" placeholder="wpisz swoje koszta pobytu" onChange={(e) => setAccommodationPrice(parseInt(e.target.value))} />
         </div>
       )}
 
       <h2>Fishing Gear</h2>
-
       <ul>
         {fishingGear.map((gear) => (
           <li key={gear.name}>
             <img src={gear.photo} alt={gear.name}/>
-            <a href="#" onClick={() => handleAddToCart(gear)}>
+            <span onClick={() => handleAddToCart(gear)}>
               {gear.name} (${gear.price})
-            </a>
+            </span>
           </li>
         ))}
       </ul>
 
       <h2>Cart</h2>
-      <ul class="cart">
+      <ul className="cart">
         {cart.map((gear) => (
           <li key={gear.name}>
             <img src={gear.photo} alt={gear.name}/>
@@ -102,9 +105,9 @@ function ServicesPage() {
         ))}
       </ul>
 
-      <p> Cart value: (${calculateCartValue()})</p>
-      <button class="cart-button" onClick={handleClearCart}>Clear Cart</button>
-      
+      <p>Cart value: (${calculateCartValue()})</p>
+      <p>Total Price: ${calculateTotalPrice()}</p>
+      <button className="cart-button" onClick={handleClearCart}>Clear Cart</button>
     </div>
   );
 }
